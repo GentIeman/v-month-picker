@@ -96,6 +96,9 @@ export default {
     if (this.horPosition !== "center" && this.horPosition !== "left" && this.horPosition !== "right") {
       throw new ReferenceError(`Attribute hor-position has an unidentified meaning`);
     }
+
+    if (this.firstYear === "") throw new ReferenceError(`The firstYear attribute must not be empty`);
+    if (this.lastYear === "") throw new ReferenceError(`The lastYear attribute must not be empty`);
   },
   computed: {
     getHorizontalPosition() {
