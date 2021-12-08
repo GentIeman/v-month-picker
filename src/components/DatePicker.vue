@@ -16,7 +16,7 @@
       <Popup :class="getVerticalPosition" v-if="click === true" @yearChanged="getYear($event)"
              @monthChanged="getMonth($event)" :currentMonth.sync="month" :selectedMonthGraph="selectedMonthGraph"
              @selectedMonth="getSelectedMonth($event)" :currentYear.sync="year" @index="getIndex($event)"
-             :firstYear="firstYear" :lastYear="lastYear" :locale="locale" />
+             :firstYear="validatedFirstYear" :lastYear="validatedLastYear" :locale="validatedLocale"/>
     </transition>
   </div>
 </template>
@@ -101,6 +101,15 @@ export default {
     if (this.lastYear === "") throw new ReferenceError(`The lastYear attribute must not be empty`);
   },
   computed: {
+    validatedLocale(){
+      return (this.locale.length < 1 ) ? "ru" : this.locale
+    },
+    validatedFirstYear() {
+      return (Number(this.firstYear) > 1 ) ? +this.firstYear : 1950
+    },
+    validatedLastYear() {
+      return ((isNaN(+this.lastYear) || Number(this.lastYear)) < this.validatedFirstYear)  ? +this.validatedFirstYear + 100 : +this.lastYear
+    },
     getHorizontalPosition() {
       return `h-side-${this.horPosition.toLocaleLowerCase()}`;
     },
