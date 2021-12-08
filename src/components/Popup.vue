@@ -56,7 +56,7 @@ export default {
    props: ['currentMonth', 'currentYear', 'selectedMonthGraph', 'firstYear', 'lastYear', 'locale'],
   data() {
     return {
-      currentMonthShort: new Date().toLocaleString(`${this.locale}`, {month: "short"}).replace(/\.$/, ""),
+      currentMonthShort: new Date().toLocaleString(this.locale, {month: "short"}).replace(/\.$/, ""),
       years: [],
       selectedMonth: this.selectedMonthGraph,
       selectedYear: this.currentYear,
@@ -70,13 +70,13 @@ export default {
 
     this.monthsShort = new Array(12).fill(0).map((item, i) => {
       return new Date(`${this.currentYear}-${i + 1}`) // ${this.currentYear}- firefox
-        .toLocaleDateString(`${this.locale}`, {month: 'short'})
+        .toLocaleDateString(this.locale, {month: 'short'})
         .replace(/\.$/, "")
     })
 
     this.monthsLong = new Array(12).fill(0).map((item, i) => {
       return new Date(`${this.currentYear}-${i + 1}`) // ${this.currentYear}- firefox
-        .toLocaleDateString(`${this.locale}`, {month: 'long'})
+        .toLocaleDateString(this.locale, {month: 'long'})
     })
   },
   methods: {
