@@ -53,7 +53,7 @@ export default {
     return {
       click: false,
       date: null,
-      month: new Date().toLocaleString(`${this.locale}`, { month: "long" }),
+      month: '',
       year: new Date().getFullYear(),
       monthIndex: new Date().getMonth() + 1,
       selectedMonthGraph: "" // хранит в себе значние выделенного месяца
@@ -97,8 +97,8 @@ export default {
       throw new ReferenceError(`Attribute hor-position has an unidentified meaning`);
     }
 
-    if (this.firstYear === "") throw new ReferenceError(`The firstYear attribute must not be empty`);
-    if (this.lastYear === "") throw new ReferenceError(`The lastYear attribute must not be empty`);
+    this.month = new Date().toLocaleString(this.validatedLocale, { month: "long" })
+    this.formatDateISO();
   },
   computed: {
     validatedLocale(){
@@ -116,9 +116,6 @@ export default {
     getVerticalPosition() {
       return `v-side-${this.verticalPosition.toLocaleLowerCase()}`;
     }
-  },
-  mounted() {
-    this.formatDateISO();
   }
 };
 </script>
