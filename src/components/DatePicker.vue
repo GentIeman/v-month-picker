@@ -16,7 +16,7 @@
       <Popup :class="getVerticalPosition" v-if="click === true" @yearChanged="getYear($event)"
              @monthChanged="getMonth($event)" :currentMonth.sync="month" :selectedMonthGraph="selectedMonthGraph"
              @selectedMonth="getSelectedMonth($event)" :currentYear.sync="year" @index="getIndex($event)"
-             :firstYear="firstYear" :lastYear="lastYear" :locale="locale" />
+             :firstYear="validatedFirstYear" :lastYear="validatedLastYear" :locale="validatedLocale"/>
     </transition>
   </div>
 </template>
@@ -28,11 +28,11 @@ export default {
   name: "date-picker",
   components: { Popup },
   props: {
-    horPosition: {
+    horizontalPosition: {
       default: "center",
       type: String
     },
-    verPosition: {
+    verticalPosition: {
       default: "bottom",
       type: String
     },
@@ -53,7 +53,7 @@ export default {
     return {
       click: false,
       date: null,
-      month: new Date().toLocaleString(`${this.locale}`, { month: "long" }),
+      month: '',
       year: new Date().getFullYear(),
       monthIndex: new Date().getMonth() + 1,
       selectedMonthGraph: "" // хранит в себе значние выделенного месяца
@@ -89,24 +89,33 @@ export default {
     }
   },
   created() {
-    if (this.verPosition !== "bottom" && this.verPosition !== "top") {
+    if (this.verticalPosition !== "bottom" && this.verticalPosition !== "top") {
       throw new ReferenceError(`Attribute ver-position has an unidentified meaning`);
     }
 
-    if (this.horPosition !== "center" && this.horPosition !== "left" && this.horPosition !== "right") {
+    if (this.horizontalPosition !== "center" && this.horizontalPosition !== "left" && this.horizontalPosition !== "right") {
       throw new ReferenceError(`Attribute hor-position has an unidentified meaning`);
     }
+
+    this.month = new Date().toLocaleString(this.validatedLocale, { month: "long" })
+    this.formatDateISO();
   },
   computed: {
+    validatedLocale(){
+      return (this.locale.length < 1 ) ? "ru" : this.locale
+    },
+    validatedFirstYear() {
+      return (Number(this.firstYear) > 1 ) ? +this.firstYear : 1950
+    },
+    validatedLastYear() {
+      return ((isNaN(+this.lastYear) || Number(this.lastYear)) < this.validatedFirstYear)  ? +this.validatedFirstYear + 100 : +this.lastYear
+    },
     getHorizontalPosition() {
-      return `h-side-${this.horPosition.toLocaleLowerCase()}`;
+      return `h-side-${this.horizontalPosition.toLocaleLowerCase()}`;
     },
     getVerticalPosition() {
-      return `v-side-${this.verPosition.toLocaleLowerCase()}`;
+      return `v-side-${this.verticalPosition.toLocaleLowerCase()}`;
     }
-  },
-  mounted() {
-    this.formatDateISO();
   }
 };
 </script>
