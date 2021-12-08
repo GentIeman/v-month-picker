@@ -28,11 +28,11 @@ export default {
   name: "date-picker",
   components: { Popup },
   props: {
-    horPosition: {
+    horizontalPosition: {
       default: "center",
       type: String
     },
-    verPosition: {
+    verticalPosition: {
       default: "bottom",
       type: String
     },
@@ -89,11 +89,11 @@ export default {
     }
   },
   created() {
-    if (this.verPosition !== "bottom" && this.verPosition !== "top") {
+    if (this.verticalPosition !== "bottom" && this.verticalPosition !== "top") {
       throw new ReferenceError(`Attribute ver-position has an unidentified meaning`);
     }
 
-    if (this.horPosition !== "center" && this.horPosition !== "left" && this.horPosition !== "right") {
+    if (this.horizontalPosition !== "center" && this.horizontalPosition !== "left" && this.horizontalPosition !== "right") {
       throw new ReferenceError(`Attribute hor-position has an unidentified meaning`);
     }
 
@@ -111,10 +111,10 @@ export default {
       return ((isNaN(+this.lastYear) || Number(this.lastYear)) < this.validatedFirstYear)  ? +this.validatedFirstYear + 100 : +this.lastYear
     },
     getHorizontalPosition() {
-      return `h-side-${this.horPosition.toLocaleLowerCase()}`;
+      return `h-side-${this.horizontalPosition.toLocaleLowerCase()}`;
     },
     getVerticalPosition() {
-      return `v-side-${this.verPosition.toLocaleLowerCase()}`;
+      return `v-side-${this.verticalPosition.toLocaleLowerCase()}`;
     }
   },
   mounted() {
