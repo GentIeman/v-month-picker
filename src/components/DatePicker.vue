@@ -131,8 +131,9 @@ export default {
 .date-picker {
   display: grid;
   place-items: center;
+  position: relative;
   width: max-content;
-  height: 100%;
+  height: min-content;
 }
 
 .h-side-left {
