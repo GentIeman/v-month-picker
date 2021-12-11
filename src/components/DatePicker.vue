@@ -132,7 +132,7 @@ export default {
   display: grid;
   place-items: center;
   position: relative;
-  width: max-content;
+  width: 150px;
   height: min-content;
 }
 
@@ -145,11 +145,11 @@ export default {
 }
 
 .v-side-top {
-  top: -350px;
+  top: -360px;
 }
 
 .v-side-bottom {
-  top: 45px;
+  top: 35px;
 }
 
 .date {
@@ -159,7 +159,6 @@ export default {
   place-items: center start;
   place-content: space-between;
   position: relative;
-  padding: 10px 0 10px;
   max-width: 300px;
   width: max-content;
   user-select: none;
