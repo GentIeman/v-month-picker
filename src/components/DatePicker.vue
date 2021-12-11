@@ -131,8 +131,9 @@ export default {
 .date-picker {
   display: grid;
   place-items: center;
-  width: max-content;
-  height: 100%;
+  position: relative;
+  width: 150px;
+  height: min-content;
 }
 
 .h-side-left {
@@ -144,11 +145,11 @@ export default {
 }
 
 .v-side-top {
-  top: -350px;
+  top: -360px;
 }
 
 .v-side-bottom {
-  top: 45px;
+  top: 35px;
 }
 
 .date {
@@ -158,7 +159,6 @@ export default {
   place-items: center start;
   place-content: space-between;
   position: relative;
-  padding: 10px 0 10px;
   max-width: 300px;
   width: max-content;
   user-select: none;
