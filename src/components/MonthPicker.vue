@@ -45,7 +45,7 @@ export default {
       type: String
     },
     locale: {
-      default: "ru",
+      default: "en",
       type: String
     }
   },
