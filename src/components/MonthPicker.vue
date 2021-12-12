@@ -102,7 +102,7 @@ export default {
   },
   computed: {
     validatedLocale(){
-      return (this.locale.length < 1 ) ? "ru" : this.locale
+      return (this.locale.length < 1 ) ? "en" : this.locale
     },
     validatedFirstYear() {
       return (Number(this.firstYear) > 1 ) ? +this.firstYear : 1950
