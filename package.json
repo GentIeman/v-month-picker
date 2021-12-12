@@ -1,5 +1,5 @@
 {
-  "name": "month-picker",
+  "name": "v-month-picker",
   "description": "Simple year and month picker inspired by vuetify's datepicker",
   "version": "0.1.4",
   "private": false,
