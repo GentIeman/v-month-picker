@@ -28,11 +28,11 @@ export default {
   name: "date-picker",
   components: { Popup },
   props: {
-    horizontalPosition: {
+    horizontalAlign: {
       default: "center",
       type: String
     },
-    verticalPosition: {
+    verticalAlign: {
       default: "bottom",
       type: String
     },
@@ -89,12 +89,12 @@ export default {
     }
   },
   created() {
-    if (this.verticalPosition !== "bottom" && this.verticalPosition !== "top") {
-      throw new ReferenceError(`Attribute ver-position has an unidentified meaning`);
+    if (this.verticalAlign !== "bottom" && this.verticalAlign !== "top") {
+      throw new ReferenceError(`Attribute vertical-align has an unidentified meaning`);
     }
 
-    if (this.horizontalPosition !== "center" && this.horizontalPosition !== "left" && this.horizontalPosition !== "right") {
-      throw new ReferenceError(`Attribute hor-position has an unidentified meaning`);
+    if (this.horizontalAlign !== "center" && this.horizontalAlign !== "left" && this.horizontalAlign !== "right") {
+      throw new ReferenceError(`Attribute horizontal-align has an unidentified meaning`);
     }
 
     this.month = new Date().toLocaleString(this.validatedLocale, { month: "long" })
@@ -111,10 +111,10 @@ export default {
       return ((isNaN(+this.lastYear) || Number(this.lastYear)) < this.validatedFirstYear)  ? +this.validatedFirstYear + 100 : +this.lastYear
     },
     getHorizontalPosition() {
-      return `h-side-${this.horizontalPosition.toLocaleLowerCase()}`;
+      return `h-side-${this.horizontalAlign.toLocaleLowerCase()}`;
     },
     getVerticalPosition() {
-      return `v-side-${this.verticalPosition.toLocaleLowerCase()}`;
+      return `v-side-${this.verticalAlign.toLocaleLowerCase()}`;
     }
   }
 };
