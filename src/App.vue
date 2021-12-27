@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="page">
     <MonthPicker />
   </div>
 </template>
@@ -22,5 +22,10 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
 }
 </style>
