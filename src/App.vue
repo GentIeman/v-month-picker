@@ -21,14 +21,6 @@ export default {
 </script>
 
 <style>
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .page {
   display: flex;
   justify-content: center;
