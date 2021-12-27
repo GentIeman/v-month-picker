@@ -31,14 +31,15 @@ export default {
 }
 ```
 ### Usage
-Below code in the ```<template>```:
+Below code in the ```<template>```:<br>
 ```html 
-<MonthPicker :horizontal-position="top" locale="en" />
+<MonthPicker :horizontal-position="top" locale="en" v-model="date"/>
 ```
 
 ### Available props
 | Prop                | Type   | Default | Description                         |
 |---------------------|--------|---------|-------------------------------------|
+| v-model (required)  | String |         | Date in ISO format                  |
 | horizontal-position | String | bottom  | Horizontal positioning of the popup |
 | vertical-position   | String | center  | Vertical positioning of the popup   |
 | locale              | String | ru      | Translation for months              |
