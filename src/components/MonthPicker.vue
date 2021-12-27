@@ -13,7 +13,7 @@
       <div class="date__line" :class="{'date__line_active': click}"></div>
     </div>
     <transition name="fade-down">
-      <Popup :class="getVerticalPosition" v-if="click === true" @yearChanged="getYear($event)"
+      <dateSelectorModal :class="getVerticalPosition" v-if="click === true" @yearChanged="getYear($event)"
              @monthChanged="getMonth($event)" :currentMonth.sync="month" :selectedMonthGraph="selectedMonthGraph"
              @selectedMonth="getSelectedMonth($event)" :currentYear.sync="year" @index="getIndex($event)"
              :firstYear="validatedFirstYear" :lastYear="validatedLastYear" :locale="validatedLocale"/>
@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import Popup from "./Popup";
+import dateSelectorModal from "./dateSelectorModal";
 
 export default {
   name: "date-picker",
-  components: { Popup },
+  components: { dateSelectorModal },
   props: {
     horizontalAlign: {
       default: "center",
