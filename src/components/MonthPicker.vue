@@ -47,16 +47,20 @@ export default {
     locale: {
       default: "en",
       type: String
+    },
+    value: {
+      default: "2021-12-00",
+      type: String
     }
   },
   data() {
     return {
       click: false,
-      date: null,
-      month: '',
+      date: this.value,
+      month: new Date().getMonth() + 1,
       year: new Date().getFullYear(),
       monthIndex: new Date().getMonth() + 1,
-      selectedMonthGraph: "" // хранит в себе значние выделенного месяца
+      selectedMonthGraph: ""
     };
   },
   methods: {
@@ -78,6 +82,15 @@ export default {
     formatDateISO() {
       if (String(this.monthIndex).length < 2) this.monthIndex = "0" + this.monthIndex;
       this.date = this.year + "-" + this.monthIndex + "-00";
+      this.$emit('input', this.date)
+      this.$emit('changed')
+    },
+    parseValue() {
+      if (this.value.length > 4) {
+        let temp = new Date(this.value)
+        this.year = temp.getFullYear()
+        this.monthIndex = (temp.getMonth() + 1) < 10 ? '0' + (temp.getMonth() + 1) : temp.getMonth() + 1
+      }
     }
   },
   watch: {
@@ -97,8 +110,9 @@ export default {
       throw new ReferenceError(`Attribute horizontal-align has an unidentified meaning`);
     }
 
-    this.month = new Date().toLocaleString(this.validatedLocale, { month: "long" })
-    this.formatDateISO();
+    this.month = new Date(this.value).toLocaleString(this.validatedLocale, { month: "long" })
+    this.parseValue()
+    this.formatDateISO()
   },
   computed: {
     validatedLocale(){
