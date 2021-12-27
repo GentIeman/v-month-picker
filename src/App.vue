@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="page">
-    <MonthPicker />
+    <MonthPicker v-model="testDate"/>
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   name: "App",
   components: {
     MonthPicker
+  },
+  data() {
+    return {
+      testDate: '2021-12-01'
+    }
   }
 }
 </script>
