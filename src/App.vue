@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-    <section class="page">
-      <DatePicker />
-    </section>
+    <MonthPicker />
   </div>
 </template>
 
 <script>
-import DatePicker from "./components/DatePicker";
+import MonthPicker from "./components/MonthPicker"
 
 export default {
   name: "App",
   components: {
-    DatePicker
+    MonthPicker
   }
-};
+}
 </script>
 
 <style>
@@ -24,13 +22,5 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.page {
-  display: grid;
-  place-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 </style>

@@ -8,7 +8,7 @@
         </h3>
       </div>
     </header>
-    <PopupAccordeon :showYearsList="showYearsList" @hideYearsList="showYearsList = false" :selectedYear="selectedYear"
+    <DateSelectorModalAccordeon :showYearsList="showYearsList" @hideYearsList="showYearsList = false" :selectedYear="selectedYear"
                     :arrYear="years" @selectedYear="getAccorderonYear($event)"/>
     <section class="years-slider" v-if="showYearsList === false">
       <div class="years-slider__inner">
@@ -48,11 +48,11 @@
 </template>
 
 <script>
-import PopupAccordeon from "./PopupAccordeon";
+import DateSelectorModalAccordeon from "./DateSelectorModalAccordeon";
 
 export default {
-  name: "popup",
-  components: {PopupAccordeon},
+  name: "DateSelectorModal",
+  components: {DateSelectorModalAccordeon},
    props: ['currentMonth', 'currentYear', 'selectedMonthGraph', 'firstYear', 'lastYear', 'locale'],
   data() {
     return {

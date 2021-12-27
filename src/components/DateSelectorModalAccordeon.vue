@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "popup-accordeon",
+  name: "DateSelectorModalAccordeon",
   props: ['showYearsList', 'selectedYear', 'arrYear'],
   data() {
     return {
@@ -22,7 +22,7 @@ export default {
     }
   },
   updated() {
-    this.handlerScroll() // todo чпоньк!👉👌
+    this.handlerScroll()
   },
   methods: {
     selectYear(item) {
