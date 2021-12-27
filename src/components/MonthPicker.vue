@@ -48,16 +48,13 @@ export default {
       default: "en",
       type: String
     },
-    value: {
-      default: "2021-12-00",
-      type: String
-    }
+    value: {}
   },
   data() {
     return {
       click: false,
       date: this.value,
-      month: new Date().getMonth() + 1,
+      month: '',
       year: new Date().getFullYear(),
       monthIndex: new Date().getMonth() + 1,
       selectedMonthGraph: ""
@@ -80,7 +77,7 @@ export default {
       this.monthIndex = item;
     },
     formatDateISO() {
-      if (String(this.monthIndex).length < 2) this.monthIndex = "0" + this.monthIndex;
+      if (this.monthIndex < 2) this.monthIndex = "0" + this.monthIndex;
       this.date = this.year + "-" + this.monthIndex + "-00";
       this.$emit('input', this.date)
       this.$emit('changed')
