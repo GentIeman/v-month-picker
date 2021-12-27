@@ -139,6 +139,14 @@ export default {
   --secondary-color: #7CA9DB;
 }
 
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .date-picker {
   display: grid;
   place-items: center;
