@@ -2,7 +2,6 @@
 <a href="https://www.npmjs.com/package/v-month-picker"><img src="https://img.shields.io/npm/dt/v-month-picker.svg" alt="Downloads"></a>
 <a href="https://www.npmjs.com/package/v-month-picker"><img src="https://img.shields.io/npm/v/v-month-picker.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/v-month-picker"><img src="https://img.shields.io/npm/l/v-month-picker.svg" alt="License"></a>
-[![Coverage Status](https://coveralls.io/repos/github/GentIeman/v-month-picker/badge.svg?branch=main)](https://coveralls.io/github/GentIeman/v-month-picker?branch=main)
 
 Simple year and month picker inspired by vuetify's monthpicker. <br>
 Vue component compatible with Vue 2.x
@@ -15,7 +14,7 @@ Vue component compatible with Vue 2.x
 - [Dependencies](#dependencies)
 
 ### Demo
-To view a demo online: [CodeSandBox](https://codesandbox.io/s/jovial-glade-tyjd1?file=/src/App.vue) <br>
+To view a demo online: [CodeSandBox](https://codesandbox.io/s/intelligent-joliot-9sv58?file=/src/App.vue) <br>
 To view demo examples locally clone the repo and run ``npm install && npm run serve``
 
 ### Install
