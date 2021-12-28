@@ -185,7 +185,6 @@ export default {
   place-items: center start;
   place-content: space-between;
   position: relative;
-  max-width: 300px;
   width: max-content;
   user-select: none;
   outline: none;
