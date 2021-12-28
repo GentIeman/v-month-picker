@@ -51,3 +51,5 @@ Below code in the ```<template>```:<br>
 
 ### License
 MIT
+
+This is my first npm package, please don't hit me ;)

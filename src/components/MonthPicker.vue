@@ -23,10 +23,14 @@
 
 <script>
 import DateSelectorModal from "./DateSelectorModal";
+import vClickOutside from 'v-click-outside'
 
 export default {
   name: "date-picker",
   components: { DateSelectorModal },
+  directives: {
+    clickOutside: vClickOutside.directive
+  },
   props: {
     horizontalAlign: {
       default: "center",
@@ -48,7 +52,10 @@ export default {
       default: "en",
       type: String
     },
-    value: {}
+    value: {
+      default: new Date().toISOString(),
+      type: String
+    }
   },
   data() {
     return {
@@ -178,7 +185,6 @@ export default {
   place-items: center start;
   place-content: space-between;
   position: relative;
-  max-width: 300px;
   width: max-content;
   user-select: none;
   outline: none;
