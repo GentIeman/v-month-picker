@@ -52,7 +52,10 @@ export default {
       default: "en",
       type: String
     },
-    value: {}
+    value: {
+      default: new Date().toISOString(),
+      type: String
+    }
   },
   data() {
     return {
