@@ -1,7 +1,8 @@
 {
   "name": "v-month-picker",
   "description": "Simple year and month picker inspired by vuetify's datepicker",
-  "version": "0.1.7",
+  "author": "Ilya Shepelev <gentleman-2021@main.ru>",
+  "version": "0.2.7",
   "private": false,
   "license": "MIT",
   "main": "./dist/monthpicker.common.js",
@@ -9,7 +10,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name monthpicker ./src/components/MonthPicker.vue"
+    "build-bundle": "vue-cli-service build --target lib --name monthpicker src/lib.js"
   },
   "dependencies": {
     "v-click-outside": "^3.1.2",
@@ -41,11 +42,23 @@
     "last 2 versions",
     "not dead"
   ],
+  "keywords": [
+    "vue",
+    "month picker",
+    "javascript",
+    "vuejs",
+    "vue.js",
+    "month-picker",
+    "vue component"
+  ],
   "files": [
     "dist/*",
     "src/*",
-    "public/*",
-    "*.json",
-    "*.js"
-  ]
+    "*.json"
+  ],
+  "homepage": "https://github.com/GentIeman/v-month-picker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GentIeman/v-month-picker.git"
+  }
 }

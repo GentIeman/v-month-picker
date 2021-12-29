@@ -26,7 +26,7 @@ import DateSelectorModal from "./DateSelectorModal";
 import vClickOutside from 'v-click-outside'
 
 export default {
-  name: "date-picker",
+  name: "month-picker",
   components: { DateSelectorModal },
   directives: {
     clickOutside: vClickOutside.directive
