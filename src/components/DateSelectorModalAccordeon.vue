@@ -1,15 +1,17 @@
 <template>
-  <transition name="fade">
-    <section class="years-accordeon" v-if="showYearsList === true">
-      <ul class="years-accordeon__list">
-        <li ref="year" class="years-accordeon__item years-accordeon__item_hover" v-for="item in arrYear" :key="item"
-            :class="{'years-accordeon__current-year': item === currentYearAccordeon, 'years-accordeon__item_selected' : item == selectedYear}"
-            @click="selectYear(item)">
-          {{ item }}
-        </li>
-      </ul>
-    </section>
-  </transition>
+  <div>
+    <transition name="fade">
+      <section class="years-accordeon" v-if="showYearsList === true">
+        <ul class="years-accordeon__list">
+          <li ref="year" class="years-accordeon__item years-accordeon__item_hover" v-for="item in arrYear" :key="item"
+              :class="{'years-accordeon__current-year': item === currentYearAccordeon, 'years-accordeon__item_selected' : item == selectedYear}"
+              @click="selectYear(item)">
+            {{ item }}
+          </li>
+        </ul>
+      </section>
+    </transition>
+  </div>
 </template>
 
 <script>
