@@ -2,7 +2,7 @@
   "name": "v-month-picker",
   "description": "Simple year and month picker inspired by vuetify's datepicker",
   "author": "Ilya Shepelev <gentleman-2021@main.ru>",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "private": false,
   "license": "MIT",
   "main": "./dist/monthpicker.common.js",

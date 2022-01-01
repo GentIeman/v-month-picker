@@ -17,7 +17,7 @@ Vue component compatible with Vue 2.x
 - [Dependencies](#dependencies)
 
 ## Demo
-To view a demo online: [CodeSandBox](https://codesandbox.io/s/practical-booth-5hl8i?file=/src/App.vue) <br>
+To view a demo online: [CodeSandBox](https://codesandbox.io/s/cranky-https-wi3iy?file=/src/App.vue) <br>
 To view demo examples locally clone the repo and run ``npm install && npm run serve``
 
 ## Install
