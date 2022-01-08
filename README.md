@@ -13,8 +13,8 @@ Vue component compatible with Vue 2.x
 - [Install](#install)
 - [Usage](#usage)
 - [Props](#available-props)
-- [License](#license)
 - [Dependencies](#dependencies)
+- [License](#license)
 
 ## Demo
 To view a demo online: [CodeSandBox](https://codesandbox.io/s/cranky-https-wi3iy?file=/src/App.vue) <br>
